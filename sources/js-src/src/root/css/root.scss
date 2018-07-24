@@ -1,0 +1,408 @@
+
+@import "define";
+/*-----------------------------------全局默认样式表---------------------------------*/
+*{box-sizing: border-box;}
+body{
+    height:100%;
+    width:100%;
+    margin:0; 
+    padding:0;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体";
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #34495e;
+    background-color: #fff;
+}
+
+#main{width:100%;font-size:15px;position: absolute;overflow: auto;top:40px;bottom:40px;}
+input,.textarea,[contenteditable],select{outline: none;transition: all .3s; -webkit-transition: all .3s;}
+
+p,.para{
+    line-height: 1.6em;
+    &.editable{
+        background: #f2f2f2;
+        padding:0.8em;
+    }
+}
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #2c3e50;
+}
+
+::-webkit-scrollbar-track{
+    background: #f5f5f5;
+}
+::-webkit-scrollbar-thumb{
+    background:rgb(207, 207, 207);
+}
+
+/*-----------------------------------页面主章节样式表---------------------------------*/
+
+.chapter{display: none;padding:2rem 5rem}
+.form{margin:3em 0em;}
+
+
+h2{text-align: center;}
+
+h3 {
+    margin: 45px 0 0.8em;
+    padding-bottom: 0.7em;
+    padding-left:1.5em;
+    position:relative;
+
+    &:before {
+        content:'';
+        display: block;
+        height:48px;
+        margin-top: -48px;
+    }
+
+    &:after{
+        font-family:"iconfont" !important;
+        font-size: 20px;
+        font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        left:0;
+        bottom: 13px;
+        position: absolute;
+    }
+
+    &.form-title:after{
+        content: "\e607";
+    }
+}
+
+h4{text-align: center;}
+
+/*-----------------------------------<table>样式表---------------------------------*/
+
+.only-word-used{
+    display: none;
+}
+
+table{
+    width:100%;
+    position:relative;
+    table-layout:fixed;
+    border-collapse:collapse;
+    margin:auto;
+
+    tr{
+        height:40px;
+
+        &:hover{
+            background: #f2f2f2
+        } 
+    }
+
+    td,th{
+        word-break:break-all;
+        border:$border;
+        text-align: center;
+        padding: 0.5em;
+    }
+
+    td:not([contenteditable]),th{
+        background: #f2f2f2;
+        font-weight: 400;
+        color:#666;
+    }
+
+}
+
+.as-tb{
+    color:#666;
+    text-align: center;
+    border: $border;
+    border-bottom: none;
+
+    .as-tr{
+        display: -webkit-flex;
+        min-height:40px;
+        border-bottom: $border;
+        &:hover{
+            background: #f2f2f2;
+        } 
+    }
+    .as-td{
+        -webkit-align-self: center;
+        padding: 0.5em;
+        border-right: $border;
+
+        &:last-child{
+            border-right: none;
+        }
+    }
+}
+.data-in-out{
+    background: #f2f2f2;
+    .as-td{
+        overflow: auto;
+        border:none;
+        border-left: $border;
+        &:first-child{
+            width: 30%;
+            border-left:none;
+        }
+        &:last-child{
+            width: 70%;
+            text-align: left;
+        }
+    }
+}
+
+
+table.data-in-out td{text-align: left;}
+
+table.editable th:first-of-type {width:80px}
+
+/*table跟laydate有冲突，专门设置laydate样式*/
+.layui-laydate-content tr{height: 30px;}
+.layui-laydate-content th,
+.layui-laydate-content td{border:none;background:#fff!important;}
+
+
+input,.textarea{padding:10px;font-size: 15px;font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体"}
+
+
+
+.main-title{margin:0 12% 0 8%;padding-bottom: 0.5em;border-bottom: 1px solid #ddd}
+.warn{color:red;}
+p.tip{
+    text-align:left;
+    border-left-color:#f66;
+    padding: 10px 16px 10px 23px;
+    margin: 2em 0 0;
+    border-left-width: 4px;
+    border-left-style: solid;
+    background-color: #f8f8f8;
+    position: relative;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    color:#9e9e9e;
+
+    &:before {
+        content: "!";
+        background-color: #f66;
+        position: absolute;
+        top: 25%;
+        left: -12px;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    h4~&{
+        margin:0;
+    }
+
+}
+
+
+.sections > div,.sections > table{margin:3em 0;}
+/* .paras > p{text-indent:2em;} */
+/* .note{text-indent:2em;padding:0.5em;border:2px solid #337ab7;border-top: none} */
+ .left{text-align: left}
+ /* textarea.area{width:100%;height:7em;} */
+
+/* .sys-basic-rearch{padding:0 2em;} */
+.sys-basic-rearch > div{margin:1.5em 0;}
+.sys-basic-rearch > div > p{margin:0.5em 0 0.5em 2em;}
+.sys-basic-rearch > div > p:first-child{margin-left:0;}
+
+
+/*table .hover{border:2px solid red;}*/
+
+caption h3{text-align: left}
+.form.items input.line{width:170px;}
+/* .form-panel.finished{border-color:#62AD44;}
+.form-panel.finished .form-title{background:#62AD44;} */
+/*.form .row{margin:0 auto;}*/
+
+
+/*-----------------------------------<textarea>样式表---------------------------------*/
+
+
+.textarea{
+    @include writeStyle;
+    height:120px;
+    width:100%;
+    resize:none;
+    border-radius: 2px;
+    border:$border;
+    overflow: auto;
+}
+
+
+
+
+/* td.filling{padding:0;} */
+td[contenteditable]{
+    @include writeStyle;
+    cursor:default;
+
+    &:focus{
+        cursor:text;
+        box-shadow: 1px 1px 20px rgba(0,0,0,.15);
+        background: white
+    }
+}
+
+span[contenteditable]{
+    cursor:text;
+    display:inline-block;
+    min-width: 100px;
+    @include writeStyle;
+    border-bottom:1px solid rgb(99, 99, 99);
+    padding:0 0.5em;
+
+    &.short{
+        min-width:60px;
+    }
+    &.long{
+        min-width:200px;
+    }
+    &:empty:before{
+        content: attr(placeholder);
+        @include writeStyle;
+    }
+}
+
+input{
+    @include writeStyle;
+}
+
+
+.label-inputs{
+    display:-webkit-flex;
+    -webkit-justify-content:space-between;
+    -webkit-flex-wrap: wrap;
+    width:100%;
+
+    .label-input{
+        display:-webkit-flex;
+        margin-bottom: -1px;
+        width:48%;
+
+        >label{
+            padding:10px 15px;
+            line-height: 20px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 2px 0 0 2px;
+            text-align: center;
+            background-color: #FBFBFB;
+            white-space: nowrap;
+            border-color: $borderColor
+        }
+
+        input{
+            border-width: 1px;
+            border-style: solid;
+            background-color: #fff;
+            border-radius: 2px;
+            border-color:$borderColor;
+            width: 100%;
+            padding-left: 10px;
+            border-left:none;
+            height:100%;
+            -webkit-flex:1;
+        }
+    }
+
+    &.collapse{
+        .label-input{
+            width:50%;
+
+            &:nth-of-type(2n)>label{
+                border-left: none;
+            }
+        }
+
+        .label-upload,.textarea{
+            border-left: none;
+            height: 100px;
+            -webkit-flex:1;
+        }
+
+        .full{
+            width:100%
+        }
+    }
+
+}
+
+
+.fa-minus-square{
+    @extend %btn-util;
+    color:#f9abab;
+    
+    &:hover{
+    color:red;
+    }
+}
+
+.fa-plus-square{
+    @extend %btn-util;
+    color:#a5efcd;
+
+    &:hover{
+        color:#42b983;
+    }
+}
+
+
+ 
+
+//  table .refreshTable{
+//     position: absolute;
+//     top:48%;
+//     left: -40px;
+//     font-size: 20px;
+//     color: #42b983;
+//     cursor: pointer;
+//  }
+
+//  .autoTable .autoVal{
+//     color:blue;
+//  }
+
+ caption{padding:1px;}
+
+
+[info]{
+    cursor:help;
+}
+[info]:after{
+    content:"\f129";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    padding-left: 5px;
+    font-size: 16px;
+    color: #3595CC;
+    vertical-align: baseline;
+    -webkit-font-smoothing:antialiased;
+}
+
+
+
+.input-error{
+    background:rgba(255, 0, 0, 0.8)!important;
+}
+
+.must:after{
+    content:'*';
+    color:red;
+    font-size:20px;
+    position: absolute;
+    padding:0 6px;
+}

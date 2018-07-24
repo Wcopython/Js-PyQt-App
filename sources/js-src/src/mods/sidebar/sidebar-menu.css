@@ -1,0 +1,122 @@
+.main-sidebar{
+  position: fixed;
+  top: 40px;
+  left: -230px;
+  bottom: 20px;
+  width: 230px;
+  z-index: 810;
+  background-color:#f2f2f2;
+  overflow: scroll;
+  /* border-top: 1px solid #e6e6e6; */
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color:#f2f2f2;  
+  /* height:120%; */
+}
+.sidebar-menu > li {
+  position: relative;
+  margin: 0;
+  padding: 0; 
+  /* border-bottom: 1px solid #efefef; */
+}
+.sidebar-menu > li > a {
+  padding: 12px 5px 12px 15px;
+  display: block;
+  border-left: 3px solid transparent;
+  color: #8a8a8a; 
+  transition: .1s linear;
+  outline:none;
+}
+.sidebar-menu > li > a span{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width:170px;
+  display: inline-block;
+}
+.sidebar-menu > li > a > .fa {
+  width: 20px;
+  }
+.sidebar-menu > li:hover > a, .sidebar-menu > li.active > a {
+  color: #000;
+  background: rgb(226, 225, 225);
+  border-left-color: rgb(139, 143, 146);
+  transition: .3s linear
+}
+.sidebar-menu > li > .treeview-menu {
+  margin: 0 1px;
+  background: #fff;
+}
+.sidebar-menu > li .label,
+.sidebar-menu > li .badge {
+  margin-top: 3px;
+  margin-right: 5px; 
+}
+/* .sidebar-menu li.header {
+  padding: 10px 25px 10px 15px;
+  font-size: 12px;
+  color: #4b646f;
+  background: #fff; 
+  text-align: center;
+} */
+.sidebar-menu li > a > .fa-angle-down {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin-right: 10px;
+  margin-top: 3px;
+  transform:rotate(-2deg) scale(1.2);
+}
+.sidebar-menu li.active > a > .fa-angle-down {
+  transform: rotate(182deg) scale(1.2); 
+  transition: all .1s
+}
+.sidebar-menu li.active > .treeview-menu {
+  display: block;
+}
+.sidebar-menu a {
+  color: #b8c7ce;
+  text-decoration: none;
+  cursor:pointer;
+}
+.sidebar-menu .treeview-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 5px;
+}
+.sidebar-menu .treeview-menu .treeview-menu {
+  padding-left: 20px; 
+}
+.sidebar-menu .treeview-menu > li {
+  margin: 0; 
+}
+.sidebar-menu .treeview-menu > li > a {
+  padding: 5px 5px 5px 25px;
+  display: block;
+  font-size: 14px;
+  color: #8a8a8a; 
+  outline:none;
+}
+.sidebar-menu .treeview-menu > li > a > .fa {
+  width: 20px;
+}
+.sidebar-menu .treeview-menu > li > a > .fa-angle-right,
+.sidebar-menu .treeview-menu > li > a > .fa-angle-down {
+  width: auto; 
+}
+.sidebar-menu .treeview-menu > li.active > a,
+ .sidebar-menu .treeview-menu > li > a:hover{
+  /* content:'#';
+  position: absolute;
+  left:25px; */
+  /* color:#42b983; */
+  color:#000;
+  /* text-decoration:underline; */
+  /* font-weight: bold; */
+}

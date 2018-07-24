@@ -1,0 +1,38 @@
+
+$checkBtnColor:#42b983;
+
+label.radio,label.checkbox{
+    padding-right:12px;
+    cursor:pointer;
+
+    &::before{
+    padding-right: 5px;
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+    &:hover::before{
+        color:$checkBtnColor
+    }
+}
+
+label.radio::before{
+    content: "\e641";
+}
+
+label.checkbox::before{
+    content: "\e62e";
+}
+
+label.radio.checked::before{
+     content: "\e71f";
+     color:$checkBtnColor;
+     font-weight: bold;
+ }
+ label.checkbox.checked::before{
+    content: "\e72a";
+    color:$checkBtnColor;
+ }

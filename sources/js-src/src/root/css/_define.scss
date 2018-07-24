@@ -1,0 +1,14 @@
+
+$borderColor:#e6e6e6;
+
+$border:1px solid $borderColor;
+
+%btn-util{
+    font-size: 16px;
+     cursor: pointer;
+}
+
+@mixin writeStyle {
+    word-break: break-all;
+    color:blue;
+}
